@@ -94,4 +94,6 @@ public class Lugar {
 			return false;
 		return true;
 	}
+	
+	
 }
