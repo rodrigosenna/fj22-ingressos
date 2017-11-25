@@ -2,11 +2,21 @@ package br.com.caelum.ingresso.model;
 
 import java.math.BigDecimal;
 import java.time.LocalTime;
+import java.util.List;
+import java.util.Map;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.servlet.ModelAndView;
+
+import br.com.caelum.ingresso.dao.SessaoDao;
+
 
 @Entity
 public class Sessao {
@@ -18,7 +28,9 @@ public class Sessao {
 	private Sala sala;
 	@ManyToOne
 	private Filme filme;
-	private	BigDecimal	preco;
+	private BigDecimal preco;
+
+	
 
 	/**
 	 * @deprecated hibernate only
@@ -26,12 +38,12 @@ public class Sessao {
 	public Sessao() {
 	}
 
-	public	Sessao(LocalTime	horario,	Filme	filme,	Sala	sala)	{
-		this.horario	=	horario;
-		this.filme	=	filme;
-		this.sala	=	sala;
-		this.preco	=	sala.getPreco().add(filme.getPreco());
-    }
+	public Sessao(LocalTime horario, Filme filme, Sala sala) {
+		this.horario = horario;
+		this.filme = filme;
+		this.sala = sala;
+		this.preco = sala.getPreco().add(filme.getPreco());
+	}
 	// demais getters e setters
 
 	public Integer getId() {
@@ -74,6 +86,9 @@ public class Sessao {
 		this.filme = filme;
 	}
 
-
+	public	Map<String,	List<Lugar>>	getMapaDeLugares(){
+		return	sala.getMapaDeLugares();
+    }
+	
 
 }

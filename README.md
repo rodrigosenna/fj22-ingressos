@@ -7,3 +7,4 @@ Adicionando documentação do curso fj22
 Exercicio 4.2
 Exercicio 4.2
 4.4 consumindo serviço
+5.2
