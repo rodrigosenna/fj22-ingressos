@@ -17,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.com.caelum.ingresso.dao.SalaDao;
 import br.com.caelum.ingresso.dao.SessaoDao;
+import br.com.caelum.ingresso.model.Carrinho;
 import br.com.caelum.ingresso.model.Sala;
 
 /**
@@ -30,6 +31,8 @@ public class SalaController {
 
     @Autowired
     private SalaDao salaDao;
+    
+
 
 
     @GetMapping({"/admin/sala", "/admin/sala/{id}"})
