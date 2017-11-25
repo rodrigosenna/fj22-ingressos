@@ -8,3 +8,4 @@ Exercicio 4.2
 Exercicio 4.2
 4.4 consumindo serviço
 5.2
+6.2 EXERCÍCIO - IMPLEMENTANDO A TELA DE COMPRAS
